@@ -1,4 +1,4 @@
-#data structure
+# data structure
 
 The idea of this repository is to exercise the data structure, algorithm and problem-solving skills adding a daily coding problem.
 
