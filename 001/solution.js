@@ -30,36 +30,11 @@ const assert = require('assert');
  assert.equal(isAddUpTo([5, 3, 2, 15], 8), true);
  assert.equal(isAddUpTo([1, 3, 2, 15], 1), false);
 
- /**
-  * Solution #2: O(n)
-  * Sort the array in the ascending order and compare the sum of each pair
-  */
- function isAddUpTo2(array, k) {
-  if (array.length < 2) { return false; }
-
-  // sort the array in ascending order
-  array.sort((a, b) => a-b);
-  let value = array[0];
-  for (let i = 1; i < array.length; i++) {
-    if (array[i] + value === k) {
-      return true;
-    }
-    value = array[i];
-  }
-  return false;
- }
-
- assert.equal(isAddUpTo2([10, 15, 3, 7], 17), true);
- assert.equal(isAddUpTo2([], 10), false);
- assert.equal(isAddUpTo2([5, 3, 2, 15], 8), true);
- assert.equal(isAddUpTo2([1, 3, 2, 15], 1), false);
- 
-
   /**
-  * Solution #3: O(n)
+  * Solution #2: O(n)
   * Store each visited value in a `Set` object and check if it contains the complement of the current value to obtain the target
   */
- function isAddUpTo3(array, k) {
+ function isAddUpTo2(array, k) {
   if (array.length < 2) { return false; }
 
   const values = new Set();
@@ -73,9 +48,9 @@ const assert = require('assert');
   return false;
  }
 
- assert.equal(isAddUpTo3([10, 15, 3, 7], 10), true);
- assert.equal(isAddUpTo3([], 10), false);
- assert.equal(isAddUpTo3([5, 3, 2, 15], 8), true);
- assert.equal(isAddUpTo3([5, 3, 2, 15], 1), false);
+ assert.equal(isAddUpTo2([10, 15, 3, 7], 10), true);
+ assert.equal(isAddUpTo2([], 10), false);
+ assert.equal(isAddUpTo2([5, 3, 2, 15], 8), true);
+ assert.equal(isAddUpTo2([5, 3, 2, 15], 1), false);
 
  console.log('All tests passed!!');
